@@ -1,0 +1,181 @@
+
+/* AUTH CSS - MIAW PETSHOP */
+
+@import url("style.css");
+
+/* BACKGROUND HALAMAN LOGIN DAN REGISTER */
+
+.auth-shell {
+    min-height: 75vh;
+    display: grid;
+    place-items: center;
+    padding: 40px 5%;
+    background: linear-gradient(
+        135deg,
+        #fff1f5,
+        #fff9f2,
+        #f5f0ff
+    );
+}
+
+/* KARTU FORM */
+
+.auth-card {
+    width: 100%;
+    max-width: 520px;
+    padding: 35px;
+    background: #ffffff;
+    border: 1px solid #f0e5e9;
+    border-radius: 26px;
+    box-shadow: 0 15px 45px #342b3512;
+}
+
+.auth-card h1 {
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    margin: 8px 0 12px;
+    text-align: center;
+}
+
+.auth-card > p {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.auth-card .eyebrow {
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+/* FORM */
+
+.auth-card .form-grid {
+    display: grid;
+    gap: 17px;
+    max-width: none;
+}
+
+.auth-card .form-grid label {
+    display: grid;
+    gap: 7px;
+    color: #342b35;
+    font-size: 0.92rem;
+    font-weight: 600;
+}
+
+.auth-card .form-grid input,
+.auth-card .form-grid select,
+.auth-card .form-grid textarea {
+    width: 100%;
+    min-height: 46px;
+    padding: 12px 15px;
+    border: 1px solid #eadde4;
+    border-radius: 13px;
+    background: #fffdfd;
+    color: #342b35;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.auth-card .form-grid input:focus,
+.auth-card .form-grid select:focus,
+.auth-card .form-grid textarea:focus {
+    outline: none;
+    border-color: #d96f92;
+    box-shadow: 0 0 0 3px #f5b8c940;
+}
+
+/* TOMBOL LOGIN DAN REGISTER */
+
+.auth-card .form-grid button,
+.auth-card .auth-submit {
+    width: 100%;
+    min-height: 48px;
+    margin-top: 8px;
+    border: none;
+    border-radius: 999px;
+    background: #d96f92;
+    color: #ffffff;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.auth-card .form-grid button:hover,
+.auth-card .auth-submit:hover {
+    background: #bf5478;
+    transform: translateY(-1px);
+}
+
+/* LINK ANTAR HALAMAN */
+
+.auth-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 22px;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.auth-links a {
+    color: #d96f92;
+    font-weight: 700;
+}
+
+.auth-links a:hover {
+    color: #a84468;
+    text-decoration: underline;
+}
+
+/* PESAN NOTIFIKASI */
+
+.auth-card .notice {
+    padding: 12px 15px;
+    margin: 15px 0;
+    border-radius: 12px;
+    background: #fff0f4;
+    color: #8f3b5a;
+    font-size: 0.9rem;
+}
+
+.auth-card .error,
+.auth-card .error-message {
+    color: #b4233d;
+    font-size: 0.85rem;
+}
+
+.auth-card .success,
+.auth-card .success-message {
+    color: #26764a;
+    font-size: 0.85rem;
+}
+
+/* CHECKBOX */
+
+.auth-card input[type="checkbox"] {
+    width: auto;
+    min-height: auto;
+    accent-color: #d96f92;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 600px) {
+    .auth-shell {
+        padding: 25px 16px;
+    }
+
+    .auth-card {
+        padding: 25px 20px;
+        border-radius: 20px;
+    }
+
+    .auth-links {
+        flex-direction: column;
+    }
+}

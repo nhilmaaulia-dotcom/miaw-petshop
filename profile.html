@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profil - Miaw Petshop</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/member.css" />
+</head>
+<body>
+  <div id="navbar"></div>
+
+  <!-- Header Profil -->
+  <section class="profile-header">
+    <div class="container">
+      <div class="profile-avatar" id="profileAvatar">😺</div>
+      <h2 class="profile-name" id="profileName">-</h2>
+      <p class="profile-email" id="profileEmail">-</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <!-- Statistik Member -->
+      <div class="profile-grid">
+        <div class="profile-stat">
+          <div class="num" id="statOrders">0</div>
+          <div class="label">Total Pesanan</div>
+        </div>
+        <div class="profile-stat">
+          <div class="num" id="statSpent">Rp 0</div>
+          <div class="label">Total Belanja</div>
+        </div>
+      </div>
+
+      <div class="profile-grid">
+        <!-- Form Edit -->
+        <div class="card">
+          <h3 class="profile-card-title">✏️ Edit Profil</h3>
+          <form onsubmit="return updateProfile(event)">
+            <div class="form-group">
+              <label for="editName">Nama Lengkap</label>
+              <input type="text" id="editName" required />
+            </div>
+            <div class="form-group">
+              <label for="editPhone">Nomor HP</label>
+              <input type="tel" id="editPhone" placeholder="08xxxxxxxxxx" required />
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Simpan Perubahan</button>
+          </form>
+        </div>
+
+        <!-- Info Member -->
+        <div class="card">
+          <h3 class="profile-card-title">🌸 Informasi Member</h3>
+          <div class="summary-row" style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px dashed var(--cream-dark);">
+            <span style="color: var(--text-muted);">Nomor Member</span>
+            <strong id="memberNumberDisplay">-</strong>
+          </div>
+          <div class="summary-row" style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px dashed var(--cream-dark);">
+            <span style="color: var(--text-muted);">Email</span>
+            <strong id="memberEmailDisplay">-</strong>
+          </div>
+          <div class="summary-row" style="display: flex; justify-content: space-between; padding: 10px 0;">
+            <span style="color: var(--text-muted);">Bergabung</span>
+            <strong id="memberJoinDisplay">-</strong>
+          </div>
+
+          <div style="margin-top: 20px; display: flex; flex-direction: column; gap: 8px;">
+            <a href="member-card.html" class="btn btn-secondary btn-block">Lihat Kartu Member</a>
+            <a href="orders.html" class="btn btn-outline btn-block">Riwayat Pesanan</a>
+            <button onclick="logoutMember()" class="btn btn-danger btn-block">Logout</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer"></div>
+
+  <script src="../js/script.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/member.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      injectLayout('profile');
+      if (requireMemberLogin()) {
+        renderProfile();
+      }
+    });
+  </script>
+</body>
+</html>

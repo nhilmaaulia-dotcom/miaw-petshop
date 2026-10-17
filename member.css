@@ -1,0 +1,30 @@
+
+@import url("style.css");
+
+.member-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    align-items: start;
+}
+
+.member-card {
+    min-height: 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.member-card h2 {
+    font-size: 1.9rem;
+}
+
+.member-card .member-number {
+    font-size: 1.1rem;
+}
+
+@media (max-width: 700px) {
+    .member-layout {
+        grid-template-columns: 1fr;
+    }
+}

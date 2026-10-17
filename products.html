@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Katalog Produk - Miaw Petshop</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <div id="navbar"></div>
+
+  <!-- Header Halaman Produk -->
+  <section class="section" style="padding-top: 40px; padding-bottom: 20px;">
+    <div class="container" style="text-align: center;">
+      <div class="section-header">
+        <h2>Semua Produk Kucing 🐱</h2>
+        <p>Temukan makanan, snack, perlengkapan, dan perawatan terbaik untuk si meong</p>
+      </div>
+
+      <!-- Pencarian dan Filter Kategori -->
+      <div style="margin-top: 20px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+        <input type="text" id="product-search" placeholder="Cari produk kucing..." style="padding: 8px 12px; border-radius: 6px; border: 1px solid #ccc; width: 250px;">
+        <select id="category-filter" style="padding: 8px 12px; border-radius: 6px; border: 1px solid #ccc;">
+          <option value="">Semua Kategori</option>
+          <option value="Makanan">Makanan</option>
+          <option value="Snack">Snack</option>
+          <option value="Perawatan">Perawatan</option>
+          <option value="Aksesoris">Aksesoris</option>
+        </select>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Daftar Produk -->
+  <section class="section">
+    <div class="container">
+      <div id="products-list" class="product-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px;"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div id="footer"></div>
+
+  <!-- Script (Menghubungkan ke file script.js dengan benar) -->
+  <script src="script.js"></script>
+</body>
+</html>

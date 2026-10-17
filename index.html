@@ -1,0 +1,206 @@
+
+<<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Miaw Petshop - Everyday Care, Made Lovely</title>
+  <meta name="description" content="Miaw Petshop - Petshop online dengan produk makanan, camilan, pasir kucing, perlengkapan, dan perawatan hewan." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <div id="navbar"></div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-content flex-hero">
+      
+      <!-- SISI KIRI: Teks & Tombol -->
+      <div class="hero-text-block">
+        <span class="hero-emoji">🐱</span>
+        <h1 class="hero-title">Miaw Petshop</h1>
+        <p class="tagline">"Everyday Care, Made Lovely."</p>
+        <div class="hero-buttons">
+          <a href="products.html" class="btn btn-primary">🛍️ Mulai Belanja</a>
+          <a href="member-register.html" class="btn btn-outline">💝 Daftar Member</a>
+        </div>
+      </div>
+
+      <!-- SISI KANAN: Gambar Banner + Kucing -->
+      <div class="hero-images-block">
+        <img src="images/banner_awal.jpg" alt="Banner Miaw Petshop" class="hero-banner-small">
+        <img src="images/kucing_awal.jpg" alt="Kucing Say Hello" class="hero-cat-small">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Kategori Produk -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Kategori Produk</h2>
+        <p>Pilih kategori favorit untuk sahabat berbulu Anda</p>
+      </div>
+      <div class="categories" id="categoriesList"></div>
+    </div>
+  </section>
+
+  <!-- Produk Pilihan -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Produk Pilihan</h2>
+        <p>Produk terbaik yang sedang populer di Miaw Petshop</p>
+      </div>
+      
+      <!-- Grid Produk (Bisa dirender dari script.js atau tampil default) -->
+      <div id="featuredProducts" class="product-grid">
+        <div class="product-card">
+          <a href="product-detail.html?id=1">
+            <div class="product-img">🐟</div>
+          </a>
+          <div class="product-info">
+            <span class="product-category">Makanan</span>
+            <a href="product-detail.html?id=1">
+              <h3 class="product-name">Makanan Kucing Salmon</h3>
+            </a>
+            <div class="product-price">Rp 65.000</div>
+            <div class="product-actions">
+              <a href="product-detail.html?id=1" class="btn btn-outline btn-sm">Detail</a>
+              <button class="btn btn-primary btn-sm" onclick="addToCart('1', 1);">+ Keranjang</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <a href="product-detail.html?id=2">
+            <div class="product-img">🐟</div>
+          </a>
+          <div class="product-info">
+            <span class="product-category">Snack</span>
+            <a href="product-detail.html?id=2">
+              <h3 class="product-name">Snack Ikan Kucing</h3>
+            </a>
+            <div class="product-price">Rp 28.000</div>
+            <div class="product-actions">
+              <a href="product-detail.html?id=2" class="btn btn-outline btn-sm">Detail</a>
+              <button class="btn btn-primary btn-sm" onclick="addToCart('2', 1);">+ Keranjang</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <a href="product-detail.html?id=3">
+            <div class="product-img">🧴</div>
+          </a>
+          <div class="product-info">
+            <span class="product-category">Perawatan</span>
+            <a href="product-detail.html?id=3">
+              <h3 class="product-name">Shampoo Pet</h3>
+            </a>
+            <div class="product-price">Rp 42.000</div>
+            <div class="product-actions">
+              <a href="product-detail.html?id=3" class="btn btn-outline btn-sm">Detail</a>
+              <button class="btn btn-primary btn-sm" onclick="addToCart('3', 1);">+ Keranjang</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <a href="product-detail.html?id=4">
+            <div class="product-img">🎀</div>
+          </a>
+          <div class="product-info">
+            <span class="product-category">Aksesoris</span>
+            <a href="product-detail.html?id=4">
+              <h3 class="product-name">Kalung Pita</h3>
+            </a>
+            <div class="product-price">Rp 35.000</div>
+            <div class="product-actions">
+              <a href="product-detail.html?id=4" class="btn btn-outline btn-sm">Detail</a>
+              <button class="btn btn-primary btn-sm" onclick="addToCart('4', 1);">+ Keranjang</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center margin-top">
+        <a href="products.html" class="btn btn-outline">Lihat Semua Produk →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Member -->
+  <section class="section">
+    <div class="container">
+      <div class="member-card-wrapper">
+        <div class="member-text">
+          <h2>Spesial Buat Anabul 🐾</h2>
+          <p>
+            Manjakan anabul kesayangan Anda dengan berbagai keuntungan eksklusif. 
+            Nikmati promo khusus member, poin reward di setiap pembelian, serta 
+            kemudahan melacak kebutuhan si meong kesayangan!
+          </p>
+        </div>
+        <div class="member-action">
+          <a href="member-register.html" class="btn btn-primary">Daftar Sekarang</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div id="footer"></div>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+  <script>
+    function renderCategories() {
+      const container = document.getElementById('categoriesList');
+      if (!container || typeof CATEGORIES === 'undefined') return;
+      container.innerHTML = CATEGORIES.map(cat => `
+        <a href="products.html?cat=${cat.id}" class="category-card">
+          <span class="cat-emoji">${cat.emoji}</span>
+          <h3>${cat.name}</h3>
+          <p>Lihat produk</p>
+        </a>
+      `).join('');
+    }
+
+    function renderFeaturedProducts() {
+      const container = document.getElementById('featuredProducts');
+      if (!container || typeof getAllProducts !== 'function') return;
+
+      const products = getAllProducts().slice(0, 4);
+      if (products && products.length > 0) {
+        container.innerHTML = products.map(p => `
+          <div class="product-card">
+            <a href="product-detail.html?id=${p.id}">
+              <div class="product-img">${p.emoji}</div>
+            </a>
+            <div class="product-info">
+              <span class="product-category">${p.category}</span>
+              <a href="product-detail.html?id=${p.id}">
+                <h3 class="product-name">${p.name}</h3>
+              </a>
+              <div class="product-price">${typeof formatRupiah === 'function' ? formatRupiah(p.price) : 'Rp ' + p.price}</div>
+              <div class="product-actions">
+                <a href="product-detail.html?id=${p.id}" class="btn btn-outline btn-sm">Detail</a>
+                <button class="btn btn-primary btn-sm" onclick="addToCart('${p.id}', 1);">+ Keranjang</button>
+              </div>
+            </div>
+          </div>
+        `).join('');
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      if (typeof injectLayout === 'function') injectLayout('home');
+      renderCategories();
+      renderFeaturedProducts();
+    });
+  </script>
+</body>
+</html>

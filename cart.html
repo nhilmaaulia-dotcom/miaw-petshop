@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Keranjang - Miaw Petshop</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .cart-layout { display: grid; grid-template-columns: 1fr 340px; gap: 24px; align-items: start; }
+    .cart-item { display: grid; grid-template-columns: 80px 1fr auto auto auto; gap: 14px; align-items: center; background: white; padding: 14px; border-radius: var(--radius-md); box-shadow: var(--shadow-soft); margin-bottom: 12px; }
+    .cart-item-img { width: 80px; height: 80px; border-radius: var(--radius-sm); background: linear-gradient(135deg, var(--pink-soft), var(--lavender-soft)); display: flex; align-items: center; justify-content: center; font-size: 2.4rem; }
+    .cart-item-info .product-category { font-size: 0.7rem; color: var(--lavender-deep); text-transform: uppercase; font-weight: 700; }
+    .cart-item-name { font-size: 1rem; font-weight: 700; margin: 2px 0; font-family: 'DM Sans', sans-serif; }
+    .cart-item-price { color: var(--pink-deep); font-weight: 700; font-size: 0.95rem; }
+    .cart-item-qty { display: flex; align-items: center; gap: 6px; }
+    .qty-btn { width: 30px; height: 30px; border: 2px solid var(--pink-soft); background: white; border-radius: 8px; font-size: 1.1rem; cursor: pointer; font-weight: 700; color: var(--pink-deep); }
+    .qty-btn:hover { background: var(--pink-soft); }
+    .cart-item-qty input { width: 50px; padding: 6px; text-align: center; border: 2px solid var(--pink-soft); border-radius: 8px; font-family: 'DM Sans', sans-serif; }
+    .cart-item-subtotal { font-weight: 700; color: var(--pink-deep); min-width: 100px; text-align: right; }
+    .cart-item-remove { background: transparent; border: none; cursor: pointer; font-size: 1.2rem; padding: 6px; }
+    .cart-summary { background: white; padding: 24px; border-radius: var(--radius-md); box-shadow: var(--shadow-soft); position: sticky; top: 80px; }
+    .cart-summary h3 { color: var(--pink-deep); margin-bottom: 14px; }
+    .summary-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px dashed var(--cream-dark); }
+    .summary-row.total { font-size: 1.3rem; font-weight: 700; color: var(--pink-deep); border-bottom: none; padding-top: 12px; }
+    @media (max-width: 768px) {
+      .cart-layout { grid-template-columns: 1fr; }
+      .cart-item { grid-template-columns: 60px 1fr; gap: 10px; }
+      .cart-item-img { width: 60px; height: 60px; font-size: 1.8rem; }
+      .cart-item-qty, .cart-item-subtotal, .cart-item-remove { grid-column: 2; }
+    }
+  </style>
+</head>
+<body>
+  <div id="navbar"></div>
+
+  <section class="page-header">
+    <div class="container">
+      <h1>🛒 Keranjang Belanja</h1>
+      <p>Periksa pesanan Anda sebelum checkout</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="cart-layout">
+        <div id="cartContainer"></div>
+
+        <div id="cartSummary" class="cart-summary">
+          <h3>Ringkasan</h3>
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <span id="cartSubtotal">Rp 0</span>
+          </div>
+          <div class="summary-row">
+            <span>Ongkos Kirim</span>
+            <span>Gratis</span>
+          </div>
+          <div class="summary-row total">
+            <span>Total</span>
+            <span id="cartTotal">Rp 0</span>
+          </div>
+          <a href="checkout.html" class="btn btn-primary btn-block" style="margin-top: 18px;">Lanjut ke Checkout →</a>
+          <a href="products.html" class="btn btn-outline btn-block" style="margin-top: 8px;">Lanjut Belanja</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer"></div>
+
+  <script src="../js/script.js"></script>
+  <script src="../js/cart.js"></script>
+  <script>
+    // Override renderCartPage agar menampilkan subtotal juga
+    const originalRenderCartPage = renderCartPage;
+    renderCartPage = function () {
+      originalRenderCartPage();
+      const cart = getDetailedCart();
+      const subtotal = cart.reduce((s, i) => s + i.subtotal, 0);
+      const subEl = document.getElementById('cartSubtotal');
+      if (subEl) subEl.textContent = formatRupiah(subtotal);
+    };
+
+    document.addEventListener('DOMContentLoaded', function () {
+      injectLayout('cart');
+      renderCartPage();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login Admin - Miaw Petshop</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/auth.css" />
+</head>
+<body class="auth-body">
+  <div class="auth-wrapper admin-theme">
+    <div class="auth-logo">
+      <span class="logo-emoji">🔐</span>
+      <h1>Admin Panel</h1>
+      <p>Miaw Petshop Dashboard</p>
+    </div>
+
+    <div class="auth-title">
+      <h2>🌸 Selamat Datang, Admin</h2>
+      <p>Masuk untuk mengelola Miaw Petshop</p>
+    </div>
+
+    <div id="adminMessage" class="auth-message"></div>
+
+    <form id="adminLoginForm" onsubmit="return loginAdmin(event)">
+      <div class="form-group">
+        <label for="adminEmail">Email Admin</label>
+        <input type="email" id="adminEmail" placeholder="admin@miawpetshop.com" required />
+      </div>
+      <div class="form-group">
+        <label for="adminPassword">Password</label>
+        <input type="password" id="adminPassword" placeholder="Password admin" required />
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Masuk sebagai Admin</button>
+    </form>
+
+    <div class="demo-info admin">
+      <strong>🔑 Akun Demo Admin:</strong><br />
+      Email: <code>admin@miawpetshop.com</code><br />
+      Password: <code>admin123</code>
+      <br /><br />
+      <small>⚠️ Autentikasi ini hanya simulasi di sisi browser dan <strong>bukan keamanan produksi</strong>. Jangan digunakan untuk website nyata.</small>
+    </div>
+
+    <div class="auth-footer">
+      <a href="../index.html">← Kembali ke Beranda</a>
+    </div>
+  </div>
+
+  <script src="../js/script.js"></script>
+  <script src="../js/auth.js"></script>
+</body>
+</html>
